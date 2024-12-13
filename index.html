@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Plate Detection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Work+Sans:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section -->
+        <div class="left-section">
+            <!-- PDF Viewer -->
+            <div class="pdf-viewer">
+                <iframe src="./OCR_standy_1.pdf" frameborder="0">
+                    <p>PDF preview is not available. Please download it <a href="./OCR_standy_1.pdf">here</a>.</p>
+                </iframe>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <!-- Dropdown for selecting sample images -->
+                <div class="sample-images">
+                    <label for="sampleSelect">Choose a sample image:</label>
+                    <select id="sampleSelect">
+                        <option value="">--Select a Sample--</option>
+                        <option value="sample_images/Auto1.jpeg">Auto1</option>
+                        <option value="sample_images/Auto2.jpg">Auto2</option>
+                        <option value="sample_images/Bike1.jpg">Bike1</option>
+                        <option value="sample_images/Bike2.jpg">Bike2</option>
+                        <option value="sample_images/Bus1.jpeg">Bus1</option>
+                        <option value="sample_images/Bus2.jpeg">Bus2</option>
+                        <option value="sample_images/Car1.jpg">Car1</option>
+                        <option value="sample_images/Car2.jpeg">Car2</option>
+                        <option value="sample_images/Car3.jpg">Car3</option>
+                        <option value="sample_images/Car4.jpg">Car4</option>
+                        <option value="sample_images/Car5Dark.jpg">Car5D</option>
+                        <option value="sample_images/Car6Dark.jpg">Car6D</option>
+                        <option value="sample_images/Car7BH.jpg">Car7BH</option>
+                        <option value="sample_images/Van1.jpeg">Van1</option>
+                        <option value="sample_images/Van2.jpg">Van2</option>
+                    </select>
+                </div>
+
+                <!-- Drag and Drop Zone -->
+                <div class="drag-drop-zone" id="dragDropZone" role="button" aria-label="Drag and drop your file here or click to upload">
+                    <span>📂 Drag and drop your image here or <strong>click to upload</strong></span>
+                </div>
+                <input type="file" id="fileInput" accept="image/*" aria-hidden="true">
+                <img id="uploadedImagePreview" src="" alt=" No Image Selected or Uploaded">
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div>
+                <h2>AutoPlateX: Intelligent OCR for Vehicle Plate Recognition</h2>
+            </div>
+            <div class="progress-bar" id="progressBar">
+                <div class="progress"></div>
+            </div>
+            <div class="results-section">
+                <div class="stage-column" id="resultColumn" aria-live="polite"></div>
+                <div class="detected-info" id="detectedInfo" aria-live="polite">
+                    <h3>🎯 Final Detection Result</h3>
+                    <p><strong>Detected Text:</strong> <span class="highlight" id="detectedText">N/A</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
