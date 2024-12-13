@@ -66,7 +66,7 @@ async function handleUpload(file) {
     resultColumn.appendChild(loadingSpinner);  // Show loading spinner
 
     try {
-        const response = await fetch('http://164.100.140.208:5001//detect_sendimg', {
+        const response = await fetch('https://proxy-server-pvp1.onrender.com/api/detect_sendimg', {
             method: 'POST',
             body: formData
         });
