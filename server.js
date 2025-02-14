@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 app.use(
     '/api', // Prefix for the proxy route
     createProxyMiddleware({
-        target: 'http://164.100.140.208:5001', // Replace with your target server
+        target: 'http://192.168.137.37:5001', // Replace with your target server
         changeOrigin: true, // Needed to handle CORS
         pathRewrite: {
             '^/api': '', // Remove the '/api' prefix when forwarding the request

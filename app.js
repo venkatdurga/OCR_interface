@@ -32,7 +32,7 @@ sampleSelect.addEventListener('change', async (e) => {
                 throw new Error('Failed to fetch image.');
             }
             const blob = await response.blob();
-            
+
             // Create a file from the blob and pass it to showPreview function
             const file = new File([blob], imageUrl.split('/').pop(), { type: blob.type });
             showPreview(file);
@@ -66,7 +66,7 @@ async function handleUpload(file) {
     resultColumn.appendChild(loadingSpinner);  // Show loading spinner
 
     try {
-        const response = await fetch('https://proxy-server-pvp1.onrender.com/api/detect_sendimg', {
+        const response = await fetch('http://192.168.137.37:5001/detect_sendimg', {
             method: 'POST',
             body: formData
         });
